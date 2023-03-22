@@ -2,7 +2,7 @@
   <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
 {%- endif -%}
 
-<script>
+<script type="lazyload_int">
   flu = window.flu || {};
   flu.chunks = {
     photoswipe: "{{ 'photoswipe-chunk.js' | asset_url }}",
@@ -15,9 +15,9 @@
 {% assign useUnminThemeJS = false %}
 
 {% if useUnminThemeJS %}
-  <script src="{{ 'theme.js' | asset_url }}"></script>
+  <script type="lazyload_int" data-src="{{ 'theme.js' | asset_url }}"></script>
 {% else %}
-  <script type="module" src="{{ 'theme.min.js' | asset_url }}"></script>
+  <script type="lazyload_int" data-w3-type="module" data-src="{{ 'theme.min.js' | asset_url }}"></script>
 {% endif %}
 
 {% # Set the following line to true to import custom-events.js %}
