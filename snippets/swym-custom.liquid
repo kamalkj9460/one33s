@@ -1,0 +1,14 @@
+<script defer>
+  function swymCallbackFn(swat){
+    // your API calls go here
+      swat.evtLayer.addEventListener(swat.JSEvents.removedFromWishlist, function(){
+      swat.initializeActionButtons("Body");
+        console.log("re-init on remove");
+     });
+  }
+  if(!window.SwymCallbacks){
+    window.SwymCallbacks = [];
+  }
+  window.SwymCallbacks.push(swymCallbackFn);
+
+</script>
